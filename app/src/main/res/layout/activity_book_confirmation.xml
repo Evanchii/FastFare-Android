@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".BookConfirmation">
+
+    <TextView
+        android:id="@+id/bookConfirm_staticTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/main_font"
+        android:text="Summary of Transaction"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/bookConfirm_staticTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bookConfirm_staticTitle"
+        android:layout_alignTop="@id/bookConfirm_txtTime"
+        android:layout_alignBottom="@id/bookConfirm_txtTime"
+        android:layout_alignParentStart="true"
+        android:fontFamily="@font/main_font"
+        android:text="Time"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/bookConfirm_txtTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bookConfirm_staticTitle"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:layout_toEndOf="@id/bookConfirm_staticTime"
+        android:fontFamily="@font/main_font"
+        android:text="Fetching..."
+        android:textAlignment="textEnd"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/bookConfirm_staticDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/bookConfirm_txtDate"
+        android:layout_alignBottom="@id/bookConfirm_txtDate"
+        android:fontFamily="@font/main_font"
+        android:text="Date"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/bookConfirm_txtDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bookConfirm_txtTime"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:layout_toEndOf="@id/bookConfirm_staticDate"
+        android:fontFamily="@font/main_font"
+        android:text="Fetching..."
+        android:textAlignment="textEnd"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/bookConfirm_staticDriver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/bookConfirm_txtDriver"
+        android:layout_alignBottom="@id/bookConfirm_txtDriver"
+        android:layout_alignParentStart="true"
+        android:fontFamily="@font/main_font"
+        android:text="Driver"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/bookConfirm_txtDriver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bookConfirm_txtDate"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:layout_toEndOf="@id/bookConfirm_staticDriver"
+        android:fontFamily="@font/main_font"
+        android:text="Fetching..."
+        android:textAlignment="textEnd"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/bookConfirm_staticType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/bookConfirm_txtType"
+        android:layout_alignBottom="@id/bookConfirm_txtType"
+        android:layout_alignParentStart="true"
+        android:fontFamily="@font/main_font"
+        android:text="PUV Type"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/bookConfirm_txtType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bookConfirm_txtDriver"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:layout_toEndOf="@id/bookConfirm_staticType"
+        android:fontFamily="@font/main_font"
+        android:text="Fetching..."
+        android:textAlignment="textEnd"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/bookConfirm_staticOrigin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bookConfirm_staticType"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/main_font"
+        android:text="Origin"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/bookConfirm_txtOrigin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bookConfirm_staticOrigin"
+        android:layout_marginBottom="4dp"
+        android:fontFamily="@font/main_font"
+        android:text="Fetching..."
+        android:textAlignment="textEnd"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/bookConfirm_staticDestination"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bookConfirm_txtOrigin"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/main_font"
+        android:text="Destination"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/bookConfirm_txtDestination"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bookConfirm_staticDestination"
+        android:layout_marginBottom="4dp"
+        android:fontFamily="@font/main_font"
+        android:text="Fetching..."
+        android:textAlignment="textEnd"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/bookConfirm_staticKM"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/bookConfirm_txtKM"
+        android:layout_alignBottom="@id/bookConfirm_txtKM"
+        android:layout_alignParentStart="true"
+        android:fontFamily="@font/main_font"
+        android:text="Distance (KM)"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/bookConfirm_txtKM"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bookConfirm_txtDestination"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:layout_toEndOf="@id/bookConfirm_staticKM"
+        android:fontFamily="@font/main_font"
+        android:text="Fetching..."
+        android:textAlignment="textEnd"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/bookConfirm_staticPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bookConfirm_staticKM"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/main_font"
+        android:text="Price Breakdown"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/bookConfirm_txtPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bookConfirm_staticPrice"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="75dp"
+        android:fontFamily="@font/main_font"
+        android:text="Fetching..."
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bookConfirm_btnDecline"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:backgroundTint="@color/app_green"
+        android:fontFamily="@font/main_font"
+        android:text="Decline"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bookConfirm_btnAccept"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:backgroundTint="@color/app_green"
+        android:fontFamily="@font/main_font"
+        android:text="Accept"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+</RelativeLayout>

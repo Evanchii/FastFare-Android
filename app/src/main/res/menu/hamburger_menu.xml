@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/action_dashboard"
+            android:icon="@drawable/ic_dashboard"
+            android:orderInCategory="100"
+            android:title="Dashboard"
+            app:showAsAction="never" />
+        <item
+            android:id="@+id/action_balance"
+            android:icon="@drawable/ic_wallet"
+            android:orderInCategory="100"
+            android:title="Balance Management"
+            app:showAsAction="never" />
+        <item
+            android:id="@+id/action_history"
+            android:icon="@drawable/ic_history"
+            android:orderInCategory="100"
+            android:title="History"
+            app:showAsAction="never" />
+        <item
+            android:id="@+id/action_settings"
+            android:icon="@drawable/ic_settings"
+            android:orderInCategory="100"
+            android:title="Settings"
+            app:showAsAction="never" />
+        <item
+            android:id="@+id/action_logout"
+            android:icon="@drawable/ic_logout"
+            android:orderInCategory="100"
+            android:title="Log Out"
+            app:showAsAction="never" />
+    </group>
+</menu>

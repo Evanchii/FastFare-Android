@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_navigation"
+    app:startDestination="@+id/navigation_dashboard">
+
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name=".Dashboard"
+        android:label="Dashboard"
+        tools:layout="@layout/activity_dashboard" />
+
+    <fragment
+        android:id="@+id/navigation_balance"
+        android:name=".BalanceManagement"
+        android:label="Balance Management"
+        tools:layout="@layout/activity_balance_management" />
+
+    <fragment
+        android:id="@+id/navigation_history"
+        android:name=".HistoryFragment"
+        android:label="History"
+        tools:layout="@layout/activity_history" />
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name=".ProfileFragment"
+        android:label="User Profile"
+        tools:layout="@layout/activity_profile" />
+
+</navigation>
