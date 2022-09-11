@@ -6,11 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <LinearLayout
-        android:id="@+id/main_parentView"
+    <fragment
+        android:id="@+id/nav_host"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"></LinearLayout>
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/home_navigation" />
 
     <com.google.android.material.bottomappbar.BottomAppBar
         android:layout_width="match_parent"

@@ -3,76 +3,54 @@ package com.codexmeraki.fastfare;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.cardview.widget.CardView;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 
+import com.codexmeraki.fastfare.databinding.ActivityProfileBinding;
+import com.codexmeraki.fastfare.databinding.ActivitySettingsBinding;
 import com.google.android.material.navigation.NavigationView;
 
 import org.jetbrains.annotations.NotNull;
 
-public class Settings extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class Settings extends Fragment {
 
-    CommonFunctions cf;
-    ActionBarDrawerToggle actionBarDrawerToggle;
+    private ActivitySettingsBinding binding;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setTitle("Settings");
-        setContentView(R.layout.activity_settings);
+    AppCompatButton profile, email, password, htu, tos, pp;
 
-        cf = new CommonFunctions();
-        cf.fetchHamburgerDetails((NavigationView) findViewById(R.id.navigation_view));
-        DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawerButton);
-        actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.Open, R.string.Close);
-        drawerLayout.addDrawerListener(actionBarDrawerToggle);
-        actionBarDrawerToggle.syncState();
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    public View onCreateView(@NonNull LayoutInflater inflater,
+                             ViewGroup container, Bundle savedInstanceState) {
+        binding = ActivitySettingsBinding.inflate(inflater, container, false);
+        View root = binding.getRoot();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.navigation_view);
-        navigationView.setNavigationItemSelectedListener(this);
-        navigationView.getMenu().getItem(3).setChecked(true);
+        profile = root.findViewById(R.id.settings_btnAccount);
+        email = root.findViewById(R.id.settings_btnEmail);
+        password = root.findViewById(R.id.settings_btnPassword);
+        htu = root.findViewById(R.id.settings_btnHTU);
+        tos = root.findViewById(R.id.settings_btnToS);
+        pp = root.findViewById(R.id.settings_btnPP);
 
-        View headerView = navigationView.getHeaderView(0);
-        CardView headerCard = (CardView) headerView.findViewById(R.id.header_cardMain);
-        headerCard.setOnClickListener(v -> startActivity(new Intent(this, Profile.class)));
-    }
+        profile.setOnClickListener(view -> startActivity(new Intent(getActivity(), Profile.class)));
+        email.setOnClickListener(view -> startActivity(new Intent(getActivity(), UpdateEmail.class)));
+        password.setOnClickListener(view -> startActivity(new Intent(getActivity(), ChangePassword.class)));
+//        htu.setOnClickListener(view -> startActivity(new Intent(getActivity(), .class)));
 
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (actionBarDrawerToggle.onOptionsItemSelected(item))
-            return true;
-        return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    public boolean onNavigationItemSelected(@NonNull @NotNull MenuItem item) {
-        if (CommonFunctions.menu(this, item, "Settings"))
-            finish();
-        return true;
-    }
-
-    public void btnEmail(View view) {
-        startActivity(new Intent(Settings.this, UpdateEmail.class));
-    }
-
-    public void btnPassword(View view) {
-        startActivity(new Intent(Settings.this, ChangePassword.class));
-    }
-
-    public void btnToS(View view) {
 //        TODO: Change URL to CodexMeraki|FastFare
-        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://react-app.ga/pages/privacy.php/")));
-    }
+        tos.setOnClickListener(view -> startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://react-app.ga/pages/terms.php/"))));
 
-    public void btnPrivacy(View view) {
 //        TODO: Change URL to CodexMeraki|FastFare
-        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://react-app.ga/pages/privacy.php/")));
+        pp.setOnClickListener(view -> startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://react-app.ga/pages/privacy.php/"))));
+
+        return root;
     }
 }
