@@ -2,6 +2,7 @@ package com.codexmeraki.fastfare;
 
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -16,6 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.widget.AppCompatButton;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -46,21 +48,20 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 
 public class Dashboard extends Fragment {
+    // Code/Index
+    private final int TIMESTAMP = 0, PASSENGER_UID = 1, DRIVER_UID = 2, PRICE = 3, DISTANCE = 4, ORIGIN = 5, DESTINATION = 6, DRIVER_FIRSTNAME = 7, DRIVER_MIDDLENAME = 8, DRIVER_LASTNAME = 9, DRIVER_PLATE_NUMBER = 10, PASSENGER_FIRSTNAME = 11, PASSENGER_MIDDLENAME = 12, PASSENGER_LASTNAME = 13;
 
-    Thread threadHistory, thread;
-    final int TIMESTAMP = 0, PASSENGER_UID = 1, DRIVER_UID = 2, PRICE = 3, DISTANCE = 4, ORIGIN = 5, DESTINATION = 6, DRIVER_FIRSTNAME = 7, DRIVER_MIDDLENAME = 8, DRIVER_LASTNAME = 9, DRIVER_PLATE_NUMBER = 10, PASSENGER_FIRSTNAME = 11, PASSENGER_MIDDLENAME = 12, PASSENGER_LASTNAME = 13;
-    RelativeLayout balance;
-    AppCompatButton topUp, book, apply, getStarted, update;
-    RecyclerView history;
-    TextView balText;
-    LinearLayout application, process, driver;
+    private RecyclerView history;
+    private TextView balText;
+    private CardView[] driverCards, discountCards;
 
-    SharedPreferences sharedPreferences;
-    OkHttpClient client = new OkHttpClient();
-    String msg = "", uid;
-    Toast popUp;
-
-    HistoryAdapter adapter;
+    // Misc
+    private SharedPreferences sharedPreferences;
+    private Thread threadHistory, thread;
+    private final OkHttpClient client = new OkHttpClient();
+    private String msg = "", uid;
+    private Toast popUp;
+    private HistoryAdapter adapter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -69,28 +70,58 @@ public class Dashboard extends Fragment {
 
         sharedPreferences = this.getActivity().getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
 
-        balance = mView.findViewById(R.id.dashboard_balance);
-        topUp = mView.findViewById(R.id.dashboard_btnTopUp);
-        book = mView.findViewById(R.id.dashboard_btnTravel);
-        apply = mView.findViewById(R.id.dashboard_btnApply);
-        getStarted = mView.findViewById(R.id.dashboard_btnGetStarted);
-        update = mView.findViewById(R.id.dashboard_btnUpdate);
+        // Views
+        RelativeLayout balance = mView.findViewById(R.id.dashboard_balance);
+        AppCompatButton topUp = mView.findViewById(R.id.dashboard_btnTopUp);
 
         balText = mView.findViewById(R.id.dashboard_txtBalance);
         history = mView.findViewById(R.id.dashboard_history);
 
-        application = mView.findViewById(R.id.dashboard_viewApply);
-        process = mView.findViewById(R.id.dashboard_viewProcessing);
-        driver = mView.findViewById(R.id.dashboard_viewDriver);
+        CardView pay = mView.findViewById(R.id.dashboard_cardPayFare);
+        CardView nearby = mView.findViewById(R.id.dashboard_cardNearby);
+
+        driverCards = new CardView[]{mView.findViewById(R.id.dashboard_cardApplyDriver), mView.findViewById(R.id.dashboard_cardDriverInstructions), mView.findViewById(R.id.dashboard_cardLocation), mView.findViewById(R.id.dashboard_cardUpdateDriver) };
+        discountCards = new CardView[]{mView.findViewById(R.id.dashboard_cardApplyDiscount), mView.findViewById(R.id.dashboard_cardUpdateDiscount)};
+
+        pay.setOnClickListener(view -> startActivity(new Intent(getActivity(), BookScan.class)));
+        // TODO: Create nearby screen
+        nearby.setOnClickListener(view -> startActivity(new Intent(getActivity(), BookScan.class)));
+
+        driverCards[0].setOnClickListener(view -> startActivity(new Intent(view.getContext(), DriverApplication.class)));
+        driverCards[1].setOnClickListener(view -> startActivity(new Intent(view.getContext(), DriverGetStarted.class)));
+        // TODO: Add intent getExtra mode in DriverApplication
+        driverCards[2].setOnClickListener(view -> startActivity(new Intent(view.getContext(), DriverApplication.class).putExtra("mode", "update")));
+        driverCards[3].setOnClickListener(view -> {
+            new AlertDialog.Builder(getActivity())
+                    .setTitle(driverCards[3].getTag() + " Location")
+                    .setMessage("Do you want to "+ driverCards[3].getTag() + " location and be seen in nearby drivers?")
+                    .setNegativeButton("No", (dialogInterface, i) -> dialogInterface.dismiss())
+                    .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            String t, ot = driverCards[3].getTag().toString();
+                            if(ot.equals("Enable"))
+                                t = "Disable";
+                            else
+                                t = "Enable";
+                            Toast.makeText(getActivity(), t + "d Location", Toast.LENGTH_SHORT).show();
+                           driverCards[3].setTag(t);
+                           dialogInterface.dismiss();
+                        }
+                    })
+                    .show();
+            });
+
+        /*
+        * TODO: Create Discount Form
+        * */
+        discountCards[0].setOnClickListener(view -> startActivity(new Intent(view.getContext(), Signup.class)));
+        discountCards[1].setOnClickListener(view -> startActivity(new Intent(view.getContext(), Signup.class).putExtra("mode", "update")));
 
         balance.setOnClickListener(view -> startActivity(new Intent(view.getContext(), DriverApplication.class)));
         topUp.setOnClickListener(view -> startActivity(new Intent(view.getContext(), TopUp.class)));
-        book.setOnClickListener(view -> startActivity(new Intent(view.getContext(), BookScan.class)));
-        apply.setOnClickListener(view -> startActivity(new Intent(view.getContext(), DriverApplication.class)));
-        getStarted.setOnClickListener(view -> startActivity(new Intent(view.getContext(), DriverGetStarted.class)));
-        update.setOnClickListener(view -> startActivity(new Intent(view.getContext(), DriverApplication.class).putExtra("mode", 1)));
 
-        Toast.makeText(this.getActivity(), "", Toast.LENGTH_LONG);
+        popUp = Toast.makeText(this.getActivity(), "", Toast.LENGTH_LONG);
         uid = sharedPreferences.getString("uid", "");
         fetchAllData();
 
@@ -273,26 +304,48 @@ public class Dashboard extends Fragment {
         threadHistory.start();
 
         //set bottom view
+        int a = 0, b = 0;
         switch (sharedPreferences.getString("type", "")) {
             case "0":
-                application.setVisibility(View.VISIBLE);
+                // 1-3
+                a = 1;
+                b = 3;
                 break;
             case "1":
-                process.setVisibility(View.VISIBLE);
+                // 1-3
+                driverCards[0].setOnClickListener(view -> Toast.makeText(getActivity(), "Application in progress! Please wait as we process your application.", Toast.LENGTH_LONG).show());
+                a = 1;
+                b = 3;
                 break;
             case "2":
-                driver.setVisibility(View.VISIBLE);
+                // 0
+                a = 0;
+                b = 0;
                 break;
             default:
                 Toast.makeText(this.getActivity(), "An error has occurred. Please log in again.", Toast.LENGTH_SHORT).show();
                 sharedPreferences.edit().clear().apply();
+                startActivity(new Intent(getActivity(), Login.class));
+                getActivity().finish();
         }
+        for (int x = a; x <= b; x++) {
+                ViewGroup parent = (ViewGroup) driverCards[x].getParent();
+                parent.removeView(driverCards[x]);
+        }
+
+        String x = sharedPreferences.getString("discount", "0");
+        b = x.equals("0") ? 1 : 0;
+        ViewGroup parent = (ViewGroup) discountCards[b].getParent();
+        parent.removeView(discountCards[b]);
+
+        if(x.equals("1")) discountCards[b].setOnClickListener(view -> Toast.makeText(getActivity(), "Application in progress! Please wait as we process your application.", Toast.LENGTH_LONG).show());
+
     }
 
-    @Override
-    public void onPause() {
-        if(thread.isAlive()) thread.interrupt();
-        if(threadHistory.isAlive()) threadHistory.interrupt();
-        super.onPause();
-    }
+//    @Override
+//    public void onDestroy() {
+//        if(thread.isAlive()) thread.interrupt();
+//        if(threadHistory.isAlive()) threadHistory.interrupt();
+//        super.onDestroy();
+//    }
 }

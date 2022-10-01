@@ -119,6 +119,7 @@ public class Login extends AppCompatActivity {
                         SharedPreferences.Editor edit = sharedPreferences.edit();
                         edit.putString("uid", data.get("user").toString());
                         edit.putString("type", data.get("type").toString());
+                        edit.putString("discount", data.get("discount").toString());
                         edit.apply();
 
                         startActivity(new Intent(Login.this, MainActivity.class));
@@ -141,7 +142,7 @@ public class Login extends AppCompatActivity {
         startActivity(new Intent(view.getContext(), Signup.class));
     }
 
-    public void btnLogin(View view) throws IOException, ExecutionException, InterruptedException {
+    public void btnLogin(View view) {
         TextInputEditText email = findViewById(R.id.login_tietEmail);
         TextInputEditText password = findViewById(R.id.login_tietPassword);
 
