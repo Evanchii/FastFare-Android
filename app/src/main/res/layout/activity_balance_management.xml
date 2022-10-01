@@ -20,61 +20,37 @@
             android:layout_height="wrap_content"
             android:orientation="vertical" >
 
-                <RelativeLayout
+            <LinearLayout
+                android:id="@+id/balance_staticHeader"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/app_green"
+                android:gravity="center|center_horizontal|center_vertical"
+                android:orientation="vertical"
+                android:paddingTop="14dp"
+                android:paddingBottom="40dp">
+
+
+                <TextView
+                    android:id="@+id/textView25"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/main_font"
+                    android:text="Balance Management"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView26"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@color/app_green"
-                    android:gravity="center|center_horizontal|center_vertical"
-                    android:paddingTop="14dp"
-                    android:paddingBottom="40dp">
-
-                    <TextView
-                        android:id="@+id/dashboard_txtCurrency"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignTop="@id/dashboard_txtBalance"
-                        android:layout_alignBottom="@id/dashboard_txtBalance"
-                        android:layout_alignParentStart="true"
-                        android:fontFamily="@font/main_font"
-                        android:gravity="center_vertical"
-                        android:padding="4dp"
-                        android:text="PHP"
-                        android:textColor="@color/black"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:id="@+id/dashboard_txtBalance"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentTop="true"
-                        android:layout_marginTop="16dp"
-                        android:layout_marginBottom="@dimen/cardview_compat_inset_shadow"
-                        android:layout_toEndOf="@+id/dashboard_txtCurrency"
-                        android:fontFamily="@font/main_font"
-                        android:gravity="center_vertical"
-                        android:paddingStart="4dp"
-                        android:paddingEnd="4dp"
-                        android:text="15,035,773.00"
-                        android:textColor="@color/black"
-                        android:textFontWeight="800"
-                        android:textSize="22sp" />
-
-                    <TextView
-                        android:id="@+id/dashboard_txtStatic1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/dashboard_txtBalance"
-                        android:layout_alignStart="@id/dashboard_txtCurrency"
-                        android:layout_alignEnd="@id/dashboard_txtBalance"
-                        android:layout_marginTop="4dp"
-                        android:layout_marginBottom="24dp"
-                        android:fontFamily="@font/main_font"
-                        android:text="Available Balance"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:textSize="15sp" />
-
-                </RelativeLayout>
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:text="View, Transfer, and Manage your balance"
+                    android:textAlignment="center"
+                    android:textSize="14dp" />
+            </LinearLayout>
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
@@ -82,7 +58,68 @@
                 android:layout_marginTop="-30dp"
                 android:layout_marginBottom="-40dp"
                 app:cardCornerRadius="40dp"
-                app:cardElevation="0dp"/>
+                app:cardElevation="0dp">
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/relativeLayout3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="32dp"
+                android:background="@color/app_green_light"
+                android:gravity="center|center_horizontal|center_vertical"
+                android:padding="14dp">
+
+                <TextView
+                    android:id="@+id/dashboard_txtCurrency"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@id/balance_txtBalance"
+                    android:fontFamily="@font/main_font"
+                    android:gravity="center_vertical"
+                    android:padding="4dp"
+                    android:text="PHP"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/balance_txtBalance"
+                    app:layout_constraintEnd_toStartOf="@+id/balance_txtBalance" />
+
+                <TextView
+                    android:id="@+id/balance_txtBalance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/main_font"
+                    android:gravity="center_vertical"
+                    android:paddingStart="4dp"
+                    android:paddingEnd="4dp"
+                    android:text="0.00"
+                    android:textColor="@color/black"
+                    android:textFontWeight="800"
+                    android:textSize="22sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.53"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/balance_txtStatic1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="4dp"
+                    android:fontFamily="@font/main_font"
+                    android:text="Available Balance"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/balance_txtBalance" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <TextView
                 android:id="@+id/textView12"
@@ -107,6 +144,7 @@
                     android:layout_margin="16dp"
                     android:layout_weight="1"
                     android:padding="16dp"
+                    app:cardBackgroundColor="@color/app_green_light"
                     app:cardCornerRadius="16dp"
                     app:cardElevation="8dp">
 
@@ -146,6 +184,7 @@
                     android:layout_margin="16dp"
                     android:layout_weight="1"
                     android:padding="16dp"
+                    app:cardBackgroundColor="@color/app_green_light"
                     app:cardCornerRadius="16dp"
                     app:cardElevation="8dp">
 
@@ -197,6 +236,7 @@
                 android:textStyle="bold" />
 
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/balance_transactions"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="16dp"

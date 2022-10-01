@@ -20,6 +20,7 @@
         android:textSize="24sp" />
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/transfer_tilRecipient"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -29,6 +30,7 @@
         android:padding="8dp">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/transfer_tietRecipient"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/main_font"
@@ -55,6 +57,7 @@
         android:padding="8dp">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/transfer_tietAmount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/main_font"
@@ -63,7 +66,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
-        android:id="@+id/textView22"
+        android:id="@+id/transfer_bal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
@@ -73,6 +76,7 @@
         android:textSize="16sp" />
 
     <androidx.appcompat.widget.AppCompatButton
+        android:onClick="transferBalance"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"

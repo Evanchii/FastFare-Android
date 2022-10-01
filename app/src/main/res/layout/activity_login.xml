@@ -29,7 +29,6 @@
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_margin="16dp"
-                app:cardBackgroundColor="#BFFFFFFF"
                 app:cardCornerRadius="150dp"
                 app:cardElevation="2dp"
                 app:srcCompat="@drawable/logo_app_color">
@@ -74,6 +73,7 @@
                 app:startIconDrawable="@drawable/ic_envelope">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/login_tietEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/main_font"
@@ -91,6 +91,7 @@
                 app:startIconDrawable="@drawable/ic_lock">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/login_tietPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/main_font"

@@ -6,13 +6,25 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <fragment
-        android:id="@+id/nav_host"
-        android:name="androidx.navigation.fragment.NavHostFragment"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:defaultNavHost="true"
-        app:navGraph="@navigation/home_navigation" />
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="80dp">
+
+            <fragment
+                android:id="@+id/nav_host"
+                android:name="androidx.navigation.fragment.NavHostFragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:defaultNavHost="true"
+                app:navGraph="@navigation/home_navigation" />
+        </LinearLayout>
+    </ScrollView>
 
     <com.google.android.material.bottomappbar.BottomAppBar
         android:layout_width="match_parent"
@@ -32,12 +44,13 @@
 
         </com.google.android.material.bottomnavigation.BottomNavigationView>
     </com.google.android.material.bottomappbar.BottomAppBar>
-    
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/fab"
         android:src="@drawable/ic_car"
-        app:layout_anchor="@id/bottomAppBar"/>
+        app:backgroundTint="@color/app_green_light"
+        app:layout_anchor="@id/bottomAppBar" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

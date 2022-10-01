@@ -34,7 +34,6 @@
             android:layout_marginTop="20dp"
             android:layout_toEndOf="@id/imageView7"
             android:fontFamily="@font/main_font"
-            android:text="Juan Dela Cruz"
             android:textColor="@color/black"
             android:textSize="24sp" />
 
@@ -46,7 +45,6 @@
             android:layout_alignParentEnd="true"
             android:layout_toEndOf="@id/imageView7"
             android:fontFamily="@font/main_font"
-            android:text="juandelacruz@email.com"
             android:textColor="@color/black"
             android:textSize="16sp" />
 
@@ -68,6 +66,7 @@
             android:padding="16dp">
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/profile_tilFName"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -77,6 +76,7 @@
                 android:padding="8dp">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/profile_tietFName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/main_font"
@@ -84,6 +84,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/profile_tilMName"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -93,6 +94,7 @@
                 android:padding="8dp">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/profile_tietMName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/main_font"
@@ -100,6 +102,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/profile_tilLName"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -109,6 +112,7 @@
                 android:padding="8dp">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/profile_tietLName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/main_font"
@@ -116,6 +120,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/profile_tilBDay"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -125,6 +130,7 @@
                 android:padding="8dp">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/profile_tietBDay"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/main_font"
@@ -132,6 +138,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/profile_tilAddress"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -141,6 +148,7 @@
                 android:padding="8dp">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/profile_tietAddress"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/main_font"
@@ -148,6 +156,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/profile_tilCNo"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -157,6 +166,7 @@
                 android:padding="8dp">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/profile_tietCNo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/main_font"
@@ -174,6 +184,7 @@
                 android:text="Save"
                 android:textAllCaps="false"
                 android:textColor="@color/black"
+                android:onClick="updateProfile"
                 android:textSize="16sp" />
         </LinearLayout>
     </ScrollView>
