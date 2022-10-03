@@ -29,6 +29,26 @@
         <item>Mangaldan - Dagupan City</item>
         <item>Sta. Barbara - Dagupan City</item>
     </string-array>
-<!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="discount">
+        <item>Student</item>
+        <item>PWD/Senior Citizen</item>
+    </string-array>
+
+    <string-array name="how_to_use">
+        <item>Forgot Password</item>
+        <item>Booking and Payment</item>
+        <item>Top Up balance</item>
+        <item>Register as a Driver</item>
+        <item>Contact Us!</item>
+    </string-array>
+    <string name="breakdown">
+        Distance(KM)\t\t: 6.9\n
+        Price per KM\t\t: Php 3.00\n
+        Initial 3 KM\t\t: Php 14.00\n
+        Discount\t\t: NONE(0%)\n
+        Total\t\t: Php 25.70\n\n
+        Formula:\n
+        ( Distance * Price/KM ) + Initial 3 KM - Discount
+    </string>
 </resources>

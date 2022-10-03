@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context=".Settings">
+    tools:context=".fragments.Settings">
 
     <TextView
         android:id="@+id/scan_static3"

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    tools:context=".BookConfirmation">
+    tools:context=".book.BookConfirmation">
 
     <TextView
         android:id="@+id/bookConfirm_staticTitle"
@@ -44,7 +44,7 @@
         android:layout_marginBottom="4dp"
         android:layout_toEndOf="@id/bookConfirm_staticTime"
         android:fontFamily="@font/main_font"
-        android:text="Fetching..."
+        android:text="12:51 PM"
         android:textAlignment="textEnd"
         android:textColor="@color/black"
         android:textSize="16sp" />
@@ -70,7 +70,7 @@
         android:layout_marginBottom="4dp"
         android:layout_toEndOf="@id/bookConfirm_staticDate"
         android:fontFamily="@font/main_font"
-        android:text="Fetching..."
+        android:text="October 16, 2022"
         android:textAlignment="textEnd"
         android:textColor="@color/black"
         android:textSize="16sp" />
@@ -97,7 +97,7 @@
         android:layout_marginBottom="4dp"
         android:layout_toEndOf="@id/bookConfirm_staticDriver"
         android:fontFamily="@font/main_font"
-        android:text="Fetching..."
+        android:text="John Doe"
         android:textAlignment="textEnd"
         android:textColor="@color/black"
         android:textSize="16sp" />
@@ -124,7 +124,7 @@
         android:layout_marginBottom="4dp"
         android:layout_toEndOf="@id/bookConfirm_staticType"
         android:fontFamily="@font/main_font"
-        android:text="Fetching..."
+        android:text="Modern Jeepney"
         android:textAlignment="textEnd"
         android:textColor="@color/black"
         android:textSize="16sp" />
@@ -148,7 +148,7 @@
         android:layout_below="@id/bookConfirm_staticOrigin"
         android:layout_marginBottom="4dp"
         android:fontFamily="@font/main_font"
-        android:text="Fetching..."
+        android:text="21.0789184, 1205614645"
         android:textAlignment="textEnd"
         android:textColor="@color/black"
         android:textSize="16sp" />
@@ -172,7 +172,7 @@
         android:layout_below="@id/bookConfirm_staticDestination"
         android:layout_marginBottom="4dp"
         android:fontFamily="@font/main_font"
-        android:text="Fetching..."
+        android:text="PHINMA UPANG"
         android:textAlignment="textEnd"
         android:textColor="@color/black"
         android:textSize="16sp" />
@@ -199,7 +199,7 @@
         android:layout_marginBottom="4dp"
         android:layout_toEndOf="@id/bookConfirm_staticKM"
         android:fontFamily="@font/main_font"
-        android:text="Fetching..."
+        android:text="6.9 KM"
         android:textAlignment="textEnd"
         android:textColor="@color/black"
         android:textSize="16sp" />
@@ -225,8 +225,8 @@
         android:layout_alignParentEnd="true"
         android:layout_marginBottom="75dp"
         android:fontFamily="@font/main_font"
-        android:text="Fetching..."
-        android:textAlignment="textStart"
+        android:text="@string/breakdown"
+        android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="16sp" />
 

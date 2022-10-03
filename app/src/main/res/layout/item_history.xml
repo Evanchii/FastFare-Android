@@ -45,7 +45,8 @@
             android:layout_alignParentBottom="false"
             android:layout_toEndOf="@id/itemHistory_imgIcon"
             android:fontFamily="@font/main_font"
-            android:text="LocA -> LocB" />
+            android:text="LocA -> LocB"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/itemHistory_txtPrice"

@@ -9,6 +9,8 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 
+import com.codexmeraki.fastfare.auth.Login;
+
 public class Splashscreen extends AppCompatActivity {
 
     public static final String MyPREFERENCES = "MyPrefs" ;

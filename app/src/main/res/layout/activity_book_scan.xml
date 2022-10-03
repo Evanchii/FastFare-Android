@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BookScan">
+    tools:context=".book.BookScan">
 
     <com.budiyev.android.codescanner.CodeScannerView
         android:id="@+id/qrscan_cam"
@@ -94,7 +94,7 @@
                     android:layout_toEndOf="@id/scan_txtDriver"
                     android:fontFamily="@font/main_font"
                     android:paddingBottom="9dp"
-                    android:text="Loading"
+                    android:text="John Doe"
                     android:textAlignment="textEnd"
                     android:textColor="@color/black"
                     android:textSize="20sp" />
@@ -119,7 +119,7 @@
                     android:layout_alignParentEnd="true"
                     android:layout_toEndOf="@id/scan_static3"
                     android:fontFamily="@font/main_font"
-                    android:text="Loading"
+                    android:text="KCP410"
                     android:textAlignment="textEnd"
                     android:textColor="@color/black"
                     android:textSize="20sp" />
@@ -146,7 +146,7 @@
                     android:layout_alignParentBottom="true"
                     android:layout_toEndOf="@id/scan_static3"
                     android:fontFamily="@font/main_font"
-                    android:text="Loading"
+                    android:text="Modern Jeepney"
                     android:textAlignment="textEnd"
                     android:textColor="@color/black"
                     android:textSize="20sp" />

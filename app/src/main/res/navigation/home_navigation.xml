@@ -7,25 +7,25 @@
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.codexmeraki.fastfare.Dashboard"
+        android:name="com.codexmeraki.fastfare.fragments.Dashboard"
         android:label="Dashboard"
         tools:layout="@layout/activity_dashboard" />
 
     <fragment
         android:id="@+id/navigation_balance"
-        android:name="com.codexmeraki.fastfare.BalanceManagement"
+        android:name="com.codexmeraki.fastfare.fragments.BalanceManagement"
         android:label="Balance Management"
         tools:layout="@layout/activity_balance_management" />
 
     <fragment
         android:id="@+id/navigation_history"
-        android:name="com.codexmeraki.fastfare.History"
+        android:name="com.codexmeraki.fastfare.fragments.History"
         android:label="History"
         tools:layout="@layout/activity_history" />
 
     <fragment
         android:id="@+id/navigation_settings"
-        android:name="com.codexmeraki.fastfare.Settings"
+        android:name="com.codexmeraki.fastfare.fragments.Settings"
         android:label="Settings"
         tools:layout="@layout/activity_settings" />
 

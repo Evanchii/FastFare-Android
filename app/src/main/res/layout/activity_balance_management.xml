@@ -5,9 +5,9 @@
     android:id="@+id/drawerButton"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BalanceManagement">
+    tools:context=".fragments.BalanceManagement">
 
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -23,7 +23,7 @@
             <LinearLayout
                 android:id="@+id/balance_staticHeader"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:background="@color/app_green"
                 android:gravity="center|center_horizontal|center_vertical"
                 android:orientation="vertical"
@@ -62,64 +62,75 @@
 
             </androidx.cardview.widget.CardView>
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/relativeLayout3"
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="32dp"
-                android:background="@color/app_green_light"
-                android:gravity="center|center_horizontal|center_vertical"
-                android:padding="14dp">
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="32dp"
+                app:cardBackgroundColor="@color/app_green_light"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="8dp">
 
-                <TextView
-                    android:id="@+id/dashboard_txtCurrency"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignBaseline="@id/balance_txtBalance"
-                    android:fontFamily="@font/main_font"
-                    android:gravity="center_vertical"
-                    android:padding="4dp"
-                    android:text="PHP"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"
-                    app:layout_constraintBaseline_toBaselineOf="@+id/balance_txtBalance"
-                    app:layout_constraintEnd_toStartOf="@+id/balance_txtBalance" />
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/relativeLayout3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="32dp"
+                    android:background="@color/app_green_light"
+                    android:gravity="center|center_horizontal|center_vertical"
+                    android:padding="14dp">
 
-                <TextView
-                    android:id="@+id/balance_txtBalance"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:fontFamily="@font/main_font"
-                    android:gravity="center_vertical"
-                    android:paddingStart="4dp"
-                    android:paddingEnd="4dp"
-                    android:text="0.00"
-                    android:textColor="@color/black"
-                    android:textFontWeight="800"
-                    android:textSize="22sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.53"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    <TextView
+                        android:id="@+id/dashboard_txtCurrency"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@id/balance_txtBalance"
+                        android:fontFamily="@font/main_font"
+                        android:gravity="center_vertical"
+                        android:padding="4dp"
+                        android:text="PHP"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        app:layout_constraintBaseline_toBaselineOf="@+id/balance_txtBalance"
+                        app:layout_constraintEnd_toStartOf="@+id/balance_txtBalance" />
 
-                <TextView
-                    android:id="@+id/balance_txtStatic1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="4dp"
-                    android:fontFamily="@font/main_font"
-                    android:text="Available Balance"
-                    android:textAlignment="center"
-                    android:textColor="@color/black"
-                    android:textSize="15sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/balance_txtBalance" />
+                    <TextView
+                        android:id="@+id/balance_txtBalance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/main_font"
+                        android:gravity="center_vertical"
+                        android:paddingStart="4dp"
+                        android:paddingEnd="4dp"
+                        android:text="0.00"
+                        android:textColor="@color/black"
+                        android:textFontWeight="800"
+                        android:textSize="22sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.53"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                    <TextView
+                        android:id="@+id/balance_txtStatic1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="4dp"
+                        android:fontFamily="@font/main_font"
+                        android:text="Available Balance"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/balance_txtBalance" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
 
             <TextView
                 android:id="@+id/textView12"
@@ -134,7 +145,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
                 <androidx.cardview.widget.CardView
@@ -238,10 +249,10 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/balance_transactions"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp" />
 
         </LinearLayout>
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

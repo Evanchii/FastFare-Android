@@ -5,7 +5,7 @@
     android:id="@+id/drawerButton"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".History">
+    tools:context=".fragments.History">
 
     <ScrollView
         android:layout_width="match_parent"
