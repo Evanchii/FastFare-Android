@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -114,9 +115,9 @@ public class Dashboard extends Fragment {
                     .show();
             });
 
-        /*
-        * TODO: Create Discount Form
-        * */
+//        discountCards[0].setOnClickListener(view -> {
+//            throw new RuntimeException("Test Crash");
+//        });
         discountCards[0].setOnClickListener(view -> startActivity(new Intent(view.getContext(), Signup.class)));
         discountCards[1].setOnClickListener(view -> startActivity(new Intent(view.getContext(), Signup.class).putExtra("mode", "update")));
 
@@ -126,6 +127,14 @@ public class Dashboard extends Fragment {
         popUp = Toast.makeText(this.getActivity(), "", Toast.LENGTH_LONG);
         uid = sharedPreferences.getString("uid", "");
         fetchAllData();
+
+        Button crashButton = new Button(getActivity());
+        crashButton.setText("Test Crash");
+        crashButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                throw new RuntimeException("Test Crash"); // Force a crash
+            }
+        });
 
 //        DEVNOTE: For future notifications.
 //        PassengerPayment pp = new PassengerPayment();
