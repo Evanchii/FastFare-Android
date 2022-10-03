@@ -49,7 +49,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:layout_marginTop="8dp"
-                android:layout_marginBottom="16dp" />
+                android:layout_marginBottom="16dp"
+                app:srcCompat="@drawable/asset_sample_qr" />
 
             <Button
                 android:id="@+id/getstarted_download"
@@ -80,7 +81,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="150dp"
                 android:layout_marginTop="8dp"
-                android:layout_marginBottom="16dp" />
+                android:layout_marginBottom="16dp"
+                app:srcCompat="@drawable/asset_sample_notification" />
 
         </LinearLayout>
     </ScrollView>

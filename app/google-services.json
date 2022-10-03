@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "430865008803",
+    "project_id": "fastfare-6e013",
+    "storage_bucket": "fastfare-6e013.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:430865008803:android:51272ab84374c9f61b5716",
+        "android_client_info": {
+          "package_name": "com.codexmeraki.fastfare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "430865008803-pvn0lnui5ktg36sn2o2bcptio2f0hq46.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBVpc8kCRPCF5NINzXn34qn_28fBaIE1E4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "430865008803-pvn0lnui5ktg36sn2o2bcptio2f0hq46.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

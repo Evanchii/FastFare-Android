@@ -29,6 +29,7 @@ import com.codexmeraki.fastfare.R;
 import com.codexmeraki.fastfare.auth.Signup;
 import com.codexmeraki.fastfare.balance.TopUp;
 import com.codexmeraki.fastfare.adapter.HistoryAdapter;
+import com.codexmeraki.fastfare.notifications.PassengerPayment;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -125,6 +126,10 @@ public class Dashboard extends Fragment {
         popUp = Toast.makeText(this.getActivity(), "", Toast.LENGTH_LONG);
         uid = sharedPreferences.getString("uid", "");
         fetchAllData();
+
+//        DEVNOTE: For future notifications.
+//        PassengerPayment pp = new PassengerPayment();
+//        pp.generateNotification("Juan Dela Cruz", "100.00", "Bonuan Boquig Barangay Hall", "PHINMA-UPANG", getActivity());
 
         return mView;
     }

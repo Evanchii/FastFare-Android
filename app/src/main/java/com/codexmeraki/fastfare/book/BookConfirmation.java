@@ -9,10 +9,13 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 
 import com.codexmeraki.fastfare.R;
 
 public class BookConfirmation extends AppCompatActivity {
+
+    AppCompatButton cancel, approve;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +32,11 @@ public class BookConfirmation extends AppCompatActivity {
         ab.setDisplayHomeAsUpEnabled(true);
         ab.setElevation(10);
 
+        cancel = findViewById(R.id.bookConfirm_btnDecline);
+        approve = findViewById(R.id.bookConfirm_btnAccept);
+        cancel.setOnClickListener(view1 -> finish());
+        approve.setOnClickListener(view1 -> finish());
+
         setContentView(R.layout.activity_book_confirmation);
     }
 
@@ -41,13 +49,5 @@ public class BookConfirmation extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
-    }
-
-    public void btnCancel(View view) {
-        finish();
-    }
-
-    public void btnPay(View view) {
-        finish();
     }
 }
